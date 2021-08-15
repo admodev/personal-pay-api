@@ -1,12 +1,5 @@
-const express = require("express");
-const port = 3000;
+const app = require("./app");
 
-const app = express();
+app.listen(app.get("port"));
 
-app.get("/", (req, res) => {
-  res.send("Placeholder...");
-});
-
-app.listen(port, () => {
-  console.log(`El servidor se esta ejecutando en el puerto: ${port}`);
-});
+console.log("Server is running on port: ", app.get("port"));
