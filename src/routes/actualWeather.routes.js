@@ -1,9 +1,9 @@
-const express = require("express");
+const express = require('express');
 const router = express.Router();
 
-const actualWeatherController = require("../controllers/actualWeatherController");
+const actualWeatherController = require('../controllers/actualWeatherController');
 
-router.get("/", actualWeatherController.getActualWeather);
+router.get('/', actualWeatherController.getActualWeather);
 
 // router.get("/:city", actualWeatherController.getActualWeatherByCity());
 
