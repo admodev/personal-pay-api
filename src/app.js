@@ -3,6 +3,7 @@ const cors = require('cors');
 const ipRoutes = require('./routes/ip.routes');
 const actualWeatherRoutes = require('./routes/actualWeather.routes');
 const locationRoutes = require('./routes/location.routes');
+const forecastRoutes = require('./routes/forecast.routes');
 
 const app = express();
 
@@ -35,5 +36,7 @@ app.use('/v1/api/ip', ipRoutes);
 app.use('/v1/api/current/:city?', actualWeatherRoutes);
 // Returns location data based on ipinfo output
 app.use('/v1/api/location', locationRoutes);
+// Returns forecast for 5 days with 3 hours step by city
+app.use('/v1/api/forecast/:city?', forecastRoutes);
 
 module.exports = app;
