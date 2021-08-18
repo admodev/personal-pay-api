@@ -29,8 +29,11 @@ app.get('/v1', (req, res) => {
 });
 
 // Routes
+// Returns current ip address from request
 app.use('/v1/api/ip', ipRoutes);
-app.use('/v1/api/actualWeather', actualWeatherRoutes);
+// Returns current weather for specified location via ip address data
+app.use('/v1/api/current/:city?', actualWeatherRoutes);
+// Returns location data based on ipinfo output
 app.use('/v1/api/location', locationRoutes);
 
 module.exports = app;
